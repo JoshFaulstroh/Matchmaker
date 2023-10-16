@@ -60,11 +60,18 @@
         <option value="2">Disagree</option>
         <option value="1">Strongly Disagree</option>
     </select>
-<script>
-    console.log("Starting Matchmaker...")
-</script>
 <br/><br/>
-<button>Calculate Compatibility</button>
+<button onclick="calculateCompatibility()">Calculate Compatibility</button>
+<p id="Compatibility"></p>
+
+<script>
+console.log("Starting Matchmaker...");
+
+function calculateCompatibility() {
+    console.log("calculateCompatibility()");
+    document.getElementById("compatibiltiy").innerHTML = "Your compatibility is...";
+}
+</script>
 
 </body>
 </html>
