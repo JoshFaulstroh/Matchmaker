@@ -15,8 +15,9 @@
 <body>
     <h1>Josh Faulstroh's Matchmaker</h1>
     <p>Instructions:<br/>
-    For each question, choose how strongly you agree or disagree.</p>
-    <label id="q1">1. </label><br/>
+    For each question, choose how strongly you agree or disagree to the statement.</p>
+
+    <label id="q1">1. Pancakes are better than waffles.</label><br/>
     <select>
         <option value="5">Strongly Agree</option>
         <option value="4">Agree</option>
@@ -62,14 +63,48 @@
     </select>
 <br/><br/>
 <button onclick="calculateCompatibility()">Calculate Compatibility</button>
-<p id="Compatibility"></p>
+<p id="compatibility"></p>
 
 <script>
-console.log("Starting Matchmaker...");
+console.log("Starting matchmaker...");
 
 function calculateCompatibility() {
     console.log("calculateCompatibility()");
-    document.getElementById("compatibiltiy").innerHTML = "Your compatibility is...";
+
+    let q1Response = document.getElementById('q1').selectedOptions[0].value;
+    let q2Response = document.getElementById('q2').selectedOptions[0].value;
+    let q3Response = document.getElementById('q3').selectedOptions[0].value;
+    let q4Response = document.getElementById('q4').selectedOptions[0].value;
+    let q5Response = document.getElementById('q5').selectedOptions[0].value;
+
+    console.log("Question 1 Answers:")
+    console.log(document.getElementById('q1').selectedOptions[0].text)
+    console.log(document.getElementById('q1').selectedOptions[0].value)
+    console.log(q1Response)
+    
+    console.log("Question 2 Answers:")
+    console.log(document.getElementById('q2').selectedOptions[0].text)
+    console.log(document.getElementById('q2').selectedOptions[0].value)
+    console.log(q2Response)
+    
+    console.log("Question 3 Answers:")
+    console.log(document.getElementById('q3').selectedOptions[0].text)
+    console.log(document.getElementById('q3').selectedOptions[0].value)
+    console.log(q3Response)
+    
+    console.log("Question 4 Answers:")
+    console.log(document.getElementById('q4').selectedOptions[0].text)
+    console.log(document.getElementById('q4').selectedOptions[0].value)
+    console.log(q4Response)
+    
+    console.log("Question 5 Answers:")
+    console.log(document.getElementById('q5').selectedOptions[0].text)
+    console.log(document.getElementById('q5').selectedOptions[0].value)
+    console.log(q5Response)
+    
+
+    document.getElementById("compatibility").innerHTML = "Your compatibility is...";
+
 }
 </script>
 
