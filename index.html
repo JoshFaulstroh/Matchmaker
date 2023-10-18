@@ -1,24 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!--
-    Author: Joshua Faulstroh
-    Project: Matchmaker
-    
-    All Rights Reserved
--->
 <head>
     <meta charset="UTF-8">
     <title>Matchmaker</title>
 </head>
 
 <body>
-    <h1>Josh Faulstroh's Matchmaker</h1>
+    <h1>Matchmaker</h1>
     <p>Instructions:<br>
-    For each question, choose how strongly you agree or disagree to the statement.</p>
+    For each question, choose how strongly you agree or disagree to the statement. <br>
+    After all questions are answered, click the "Calculate compatibility" button at the bottom of the page to calculate your compatibility.</p>
 
-    <label id="q1">1. Pancakes are better than waffles.</label><br>
-    <select>
+    <label>1. Pancakes are better than waffles.</label><br>
+    <select id="q1">
         <option value="5">Strongly Agree</option>
         <option value="4">Agree</option>
         <option value="3">Neutral</option>
@@ -26,8 +21,9 @@
         <option value="1">Strongly Disagree</option>
     </select>
     <br><br>
-    <label id="q2">2. </label><br>
-    <select>
+
+    <label>2. Iced coffee is better than hot coffee.</label><br>
+    <select id="q2">
         <option value="5">Strongly Agree</option>
         <option value="4">Agree</option>
         <option value="3">Neutral</option>
@@ -35,8 +31,9 @@
         <option value="1">Strongly Disagree</option>
     </select>
     <br><br>
-    <label id="q3">3. </label><br>
-    <select>
+
+    <label>3. Foo Fighters is a good band.</label><br>
+    <select id="q3">
         <option value="5">Strongly Agree</option>
         <option value="4">Agree</option>
         <option value="3">Neutral</option>
@@ -44,8 +41,9 @@
         <option value="1">Strongly Disagree</option>
     </select>
     <br><br>
-    <label id="q4">4. </label><br>
-    <select>
+
+    <label>4. Muffins are better than cupcakes.</label><br>
+    <select id="q4">
         <option value="5">Strongly Agree</option>
         <option value="4">Agree</option>
         <option value="3">Neutral</option>
@@ -53,8 +51,9 @@
         <option value="1">Strongly Disagree</option>
     </select>
     <br><br>
-    <label id="q5">5. </label><br>
-    <select>
+
+    <label>5. You are answering question 5.</label><br>
+    <select id="q5">
         <option value="5">Strongly Agree</option>
         <option value="4">Agree</option>
         <option value="3">Neutral</option>
@@ -62,6 +61,7 @@
         <option value="1">Strongly Disagree</option>
     </select>
 <br><br>
+
 <button onclick="calculateCompatibility()">Calculate Compatibility</button>
 <p id="compatibility"></p>
 
@@ -69,42 +69,48 @@
 console.log("Starting matchmaker...");
 
 function calculateCompatibility() {
-    console.log("calculateCompatibility()");
+    console.log("calculateCompatibility()") 
 
-    let q1Response = document.getElementById('q1').selectedOptions[0].value;
-    let q2Response = document.getElementById('q2').selectedOptions[0].value;
-    let q3Response = document.getElementById('q3').selectedOptions[0].value;
-    let q4Response = document.getElementById('q4').selectedOptions[0].value;
-    let q5Response = document.getElementById('q5').selectedOptions[0].value;
+    const DESIRED_RESPONSE = [
+        5, /*strongly agree*/
+        2, /* disagree */
+        1, /* storngly agree */
+    ]
 
-    console.log("Question 1 Answers:")
-    console.log(document.getElementById('q1').selectedOptions[0].text)
-    console.log(document.getElementById('q1').selectedOptions[0].value)
-    console.log(q1Response)
+    let q1Response = document.getElementById("q1").selectedOptions[0].value;
+
+    let q2Response = document.getElementById("q2").selectedOptions[0].value;
+    let q3Response = document.getElementById("q3").selectedOptions[0].value;
+    let q4Response = document.getElementById("q4").selectedOptions[0].value;
+    let q5Response = document.getElementById("q5").selectedOptions[0].value;
+
+    console.log("Question 1 Answer:");
+    console.log(document.getElementById("q1").selectedOptions[0].text);
+    console.log(document.getElementById("q1").selectedOptions[0].value);
+    console.log(q1Response);
+
+    console.log("Question 2 Answer:");
+    console.log(document.getElementById("q2").selectedOptions[0].text);
+    console.log(document.getElementById("q2").selectedOptions[0].value);
+    console.log(q2Response);
+
+    console.log("Question 3 Answer:");
+    console.log(document.getElementById("q3").selectedOptions[0].text);
+    console.log(document.getElementById("q3").selectedOptions[0].value);
+    console.log(q3Response);
+
+    console.log("Question 4 Answer:");
+    console.log(document.getElementById("q4").selectedOptions[0].text);
+    console.log(document.getElementById("q4").selectedOptions[0].value);
+    console.log(q4Response);
     
-    console.log("Question 2 Answers:")
-    console.log(document.getElementById('q2').selectedOptions[0].text)
-    console.log(document.getElementById('q2').selectedOptions[0].value)
-    console.log(q2Response)
-    
-    console.log("Question 3 Answers:")
-    console.log(document.getElementById('q3').selectedOptions[0].text)
-    console.log(document.getElementById('q3').selectedOptions[0].value)
-    console.log(q3Response)
-    
-    console.log("Question 4 Answers:")
-    console.log(document.getElementById('q4').selectedOptions[0].text)
-    console.log(document.getElementById('q4').selectedOptions[0].value)
-    console.log(q4Response)
-    
-    console.log("Question 5 Answers:")
-    console.log(document.getElementById('q5').selectedOptions[0].text)
-    console.log(document.getElementById('q5').selectedOptions[0].value)
-    console.log(q5Response)
-    
+    console.log("Question 5 Answer:");
+    console.log(document.getElementById("q5").selectedOptions[0].text);
+    console.log(document.getElementById("q5").selectedOptions[0].value);
+    console.log(q5Response);
 
     document.getElementById("compatibility").innerHTML = "Your compatibility is...";
-
+    
 }
 </script>
 
